@@ -1,10 +1,10 @@
-package controller
+package com.example.demo.controller
 
-import com.example.demo.controller.ArticleController
-import com.example.demo.entity.Article
 import com.example.demo.repository.ArticleRepository
 import spock.lang.Specification
 import spock.lang.Subject
+
+import static com.example.demo.data.ArticleData.anArticle
 
 class ArticleControllerTest extends Specification {
 
@@ -13,12 +13,18 @@ class ArticleControllerTest extends Specification {
     @Subject
     controller = new ArticleController(repository)
 
-    def 'list articles test'() {
+    def 'list articles UT test'() {
         when:
-        controller.listArticles()
+        def result = controller.listArticles()
 
         then:
-        1 * repository.findAll() >> [ new Article() ]
+        1 * repository.findAll() >> articles
         0 * _
+
+        and:
+        result.isEmpty() == articles.isEmpty()
+
+        where:
+        articles << [ [], [ anArticle() ] ]
     }
 }
