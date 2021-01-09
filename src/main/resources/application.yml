@@ -1,0 +1,17 @@
+spring:
+  web:
+    resources:
+      static-locations: classpath:/static/
+  datasource:
+    platform: h2
+    url: jdbc:h2:mem:cesiuni;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    data-source-class-name: org.h2.jdbcx.JdbcDataSource
+    username: demo
+    password: demo
+    maximum-pool-size: 3
+    initialize: true
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create-drop
