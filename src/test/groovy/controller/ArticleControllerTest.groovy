@@ -1,5 +1,6 @@
-package com.example.demo.controller
+package controller
 
+import com.example.demo.controller.ArticleController
 import com.example.demo.repository.ArticleRepository
 import spock.lang.Specification
 import spock.lang.Subject

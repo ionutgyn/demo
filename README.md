@@ -1,8 +1,14 @@
 ## Contents
+- [Requirements](#requirements)
 - [Build & Run](#build-&-run)
   - [Standalone](#standalone)
   - [Docker](#docker)
   
+### Requirements
++ Maven 3.x
++ Java >= 8
++ (Optional) Docker
+
 ### Build & Run
 #### Standalone
 + Run `mvn clean package`
